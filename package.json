@@ -10,6 +10,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "build:admin": "react-scripts build --entry ./src/admin.jsx --output-path ./build/admin",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

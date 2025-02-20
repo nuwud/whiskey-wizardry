@@ -98,6 +98,14 @@
     background-color: var(--color-text-secondary);
 }
 
+.slider-range-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+    font-size: 0.8rem;
+    color: var(--color-text-secondary);
+}
+
 /* Mobile styles */
 @media (max-width: 768px) {
     .slider-container {

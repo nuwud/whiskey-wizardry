@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import '../styles/ResultsPage.css';
 
-const ResultsPage = ({ scores, samples, onPlayAgain }) => {
+const ResultsPage = ({ scores, samples, onPlayAgain, activeQuarter }) => {
   const { totalScore, sampleScores, percentScore } = scores;
   const maxPossibleScore = samples.length * 100; // 100 points possible per sample
   const [expandedSample, setExpandedSample] = useState(null);
@@ -226,6 +226,7 @@ ResultsPage.propTypes = {
     })
   ).isRequired,
   onPlayAgain: PropTypes.func.isRequired,
+  activeQuarter: PropTypes.string.isRequired,
 };
 
 export default ResultsPage;

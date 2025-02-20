@@ -4,7 +4,7 @@ import { collection, getDocs, addDoc, updateDoc, doc } from "firebase/firestore"
 import "../styles/AdminPanel.css";
 
 const AdminPanel = () => {
-    const [quarter, setQuarter] = useState(process.env.CURRENT_QUARTER);
+    const [quarter, setQuarter] = useState(process.env.REACT_APP_CURRENT_QUARTER || "Q4-2024");
     const [samples, setSamples] = useState([]);
 
     useEffect(() => {
