@@ -1,0 +1,27 @@
+:root {
+    /* Color Palette */
+    --color-background: #121212;
+    --color-card-bg: #1e1e1e;
+    --color-card-hover: #2c2c2c;
+    --color-primary: #c9a95c; /* Gold/amber whiskey color */
+    --color-secondary: #b43e3e; /* Deep red accent */
+    --color-text-primary: #ffffff;
+    --color-text-secondary: #cccccc;
+    --color-text-muted: #888888;
+    --color-border: #333333;
+    --color-success: #5ca95c;
+    
+    /* Typography */
+    --font-heading: 'Cinzel', serif;
+    --font-body: 'Lato', sans-serif;
+    
+    /* Sizes */
+    --border-radius-sm: 4px;
+    --border-radius-md: 8px;
+    --border-radius-lg: 12px;
+    --spacing-xs: 5px;
+    --spacing-sm: 10px;
+    --spacing-md: 20px;
+    --spacing-lg: 30px;
+    --spacing-xl: 50px;
+  }

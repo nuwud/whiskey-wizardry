@@ -1,23 +1,25 @@
-// filepath: /src/components/SliderInput.jsx
 import React from "react";
 import PropTypes from "prop-types";
 import '../styles/SliderInput.css';
 
 const SliderInput = ({ min, max, step, value, onChange, label }) => {
+  // Ensure value is never undefined
+    const safeValue = value !== undefined ? value : min;
+    
     return (
         <div className="slider-input">
-        <label>
-            {label}:
+        <div className="slider-container">
+            <div className="slider-value">{safeValue}</div>
             <input
             type="range"
             min={min}
             max={max}
             step={step}
-            value={value}
+            value={safeValue}
             onChange={onChange}
+            className="slider"
             />
-            {value}
-        </label>
+        </div>
         </div>
     );
     };
@@ -26,7 +28,7 @@ const SliderInput = ({ min, max, step, value, onChange, label }) => {
     min: PropTypes.number.isRequired,
     max: PropTypes.number.isRequired,
     step: PropTypes.number.isRequired,
-    value: PropTypes.number.isRequired,
+    value: PropTypes.number,
     onChange: PropTypes.func.isRequired,
     label: PropTypes.string.isRequired,
 };

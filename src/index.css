@@ -1,11 +1,94 @@
-/* /src/index.css */
-body {
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    }
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Lato:wght@300;400;700&display=swap');
+@import './variables.css';
 
-    code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+body,
+html {
+    margin: 0;
+    padding: 0;
+    background-color: var(--color-background);
+    color: var(--color-text-primary);
+    font-family: var(--font-body);
+    line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-heading);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 0;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-lg);
+    text-align: center;
+    color: var(--color-primary);
+}
+
+h2 {
+    font-size: 1.8rem;
+    margin-bottom: var(--spacing-md);
+    color: var(--color-primary);
+}
+
+h3 {
+    font-size: 1.4rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+a {
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: #e2c888;
+}
+
+button {
+    background-color: var(--color-primary);
+    color: var(--color-background);
+    border: none;
+    padding: 10px 20px;
+    font-family: var(--font-heading);
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    border-radius: var(--border-radius-sm);
+}
+
+button:hover {
+    background-color: #e2c888;
+}
+
+button:disabled {
+    background-color: var(--color-text-muted);
+    cursor: not-allowed;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--spacing-lg);
+}
+
+/* Create a subtle background texture */
+.texture-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADQSURBVGhD7daxDYMwFIVhx2MwAgtAdUZJwyBpvEOqLJEFkJiAEaj5kWVZRm58bPzqSp9k8arHOXYaCS78l8H1sPkV9QhVPdZj6BtjKFN42ftilmXZWsOGfaGb/ZmyLFtr2LAvdDOaSTP0hW6mXmv8WGZzYRh6Xde/3QR9oZvdtY1d+EI3o5k0Q1/oZupnV97+efvH/4++0M1oJs3QF7qZ+qXF2z9v//j/0Re6Gc2kGfpCN1O/IPP2z9s//n/0hW5GM2mGvtDN1K/0vP3z9o//H32hm9FMmqEvSgmfKNgsWlP9HwAAAABJRU5ErkJggg==');
+    opacity: 0.03;
+    pointer-events: none;
+    z-index: -1;
 }
