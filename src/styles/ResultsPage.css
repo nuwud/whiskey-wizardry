@@ -313,6 +313,28 @@
     color: var(--color-secondary);
 }
 
+.perfect-match {
+  color: var(--color-success);
+  font-weight: bold;
+  margin-left: 5px;
+}
+
+.close-match {
+  color: var(--color-primary);
+  font-weight: bold;
+  margin-left: 5px;
+}
+
+.score-difference {
+  color: var(--color-text-secondary);
+  margin-left: 5px;
+}
+
+.incorrect-match {
+  color: var(--color-secondary);
+  margin-left: 5px;
+}
+
 /* Mobile responsive styles */
 @media (max-width: 768px) {
     .sample-details {
