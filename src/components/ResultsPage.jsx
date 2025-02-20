@@ -3,13 +3,13 @@ import PropTypes from 'prop-types';
 import '../styles/ResultsPage.css';
 
 const ResultsPage = ({ scores, samples, onPlayAgain }) => {
-  const { totalScore, sampleScores } = scores;
+  const { totalScore, sampleScores, percentScore } = scores;
   const maxPossibleScore = samples.length * 100; // 100 points possible per sample
   const [expandedSample, setExpandedSample] = useState(null);
   const [shareTooltip, setShareTooltip] = useState('');
   
-  // Calculate percentage score
-  const percentageScore = (totalScore / maxPossibleScore) * 100;
+  // Calculate percentage score if not provided
+  const displayPercentage = percentScore || Math.round((totalScore / maxPossibleScore) * 100);
   
   // Determine whiskey title based on percentage score
   const getWhiskeyTitle = (percentScore) => {
@@ -20,7 +20,7 @@ const ResultsPage = ({ scores, samples, onPlayAgain }) => {
     if (percentScore >= 20) return "Whiskey Rookie";
     return "Barrel Beginner";
   };
-
+  
   const getWhiskeyTitleDescription = (title) => {
     switch(title) {
       case "Whiskey Wizard":
@@ -39,8 +39,8 @@ const ResultsPage = ({ scores, samples, onPlayAgain }) => {
         return "";
     }
   };
-
-  const whiskeyTitle = getWhiskeyTitle(scores.percentScore || percentageScore);
+  
+  const whiskeyTitle = getWhiskeyTitle(displayPercentage);
   
   const toggleSample = (index) => {
     if (expandedSample === index) {
@@ -55,7 +55,7 @@ const ResultsPage = ({ scores, samples, onPlayAgain }) => {
     const shareLines = [
       `🥃 Whiskey Wizardry 🥃`,
       `Rank: ${whiskeyTitle}`,
-      `Score: ${totalScore}/${maxPossibleScore} (${scores.percentScore || percentageScore.toFixed(0)}%)`,
+      `Score: ${totalScore}/${maxPossibleScore} (${displayPercentage}%)`,
       ``,
     ];
     
@@ -116,7 +116,7 @@ const ResultsPage = ({ scores, samples, onPlayAgain }) => {
         <div className="total-score">
           <span className="score-label">Your Total Score:</span>
           <span className="score-value">{totalScore} points</span>
-          <span className="score-percentage">({percentageScore.toFixed(1)}%)</span>
+          <span className="score-percentage">({displayPercentage}%)</span>
         </div>
       </div>
       
@@ -211,8 +211,8 @@ ResultsPage.propTypes = {
         ageScore: PropTypes.number.isRequired,
         proofScore: PropTypes.number.isRequired,
         mashbillScore: PropTypes.number.isRequired,
-        ageDifference: PropTypes.number.isRequired,
-        proofDifference: PropTypes.number.isRequired,
+        ageDifference: PropTypes.number,
+        proofDifference: PropTypes.number,
         total: PropTypes.number.isRequired,
       })
     ).isRequired,
