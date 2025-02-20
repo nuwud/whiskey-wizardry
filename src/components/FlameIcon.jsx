@@ -2,6 +2,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+// Renamed to StarIcon but keeping the file name as FlameIcon for compatibility
 const FlameIcon = ({ active }) => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -13,9 +14,11 @@ const FlameIcon = ({ active }) => (
         strokeWidth="1.5"
         className={`flame-icon ${active ? "active" : ""}`}
     >
-        <path d="M12 2C10.5 4 8.5 5.5 6 7c-2.5 1.5-4 3.5-4 6.5 0 4.11 3.32 7.5 7.5 7.5 4.11 0 7.5-3.32 7.5-7.5 0-3-1.5-5-4-6.5-2.5-1.5-4.5-3-6-5z" />
+        {/* Star path instead of flame path */}
+        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
     </svg>
 );
+
 FlameIcon.propTypes = {
     active: PropTypes.bool.isRequired,
 };

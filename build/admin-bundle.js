@@ -1,47 +1,17 @@
-import fs from 'fs';
-import path from 'path';
-import { dirname } from 'path';
-import { fileURLToPath } from 'url';
-import dotenv from 'dotenv';
 
-// Set up __dirname equivalent in ESM
-const __dirname = dirname(fileURLToPath(import.meta.url));
-dotenv.config();
-
-// Verify environment variables
-const requiredEnvVars = [
-    'REACT_APP_FIREBASE_API_KEY',
-    'REACT_APP_FIREBASE_AUTH_DOMAIN',
-    'REACT_APP_FIREBASE_PROJECT_ID',
-    'REACT_APP_FIREBASE_STORAGE_BUCKET',
-    'REACT_APP_FIREBASE_MESSAGING_SENDER_ID',
-    'REACT_APP_FIREBASE_APP_ID',
-    'REACT_APP_FIREBASE_MEASUREMENT_ID',
-    'REACT_APP_ADMIN_USER',
-    'REACT_APP_ADMIN_PASS'
-];
-
-requiredEnvVars.forEach((varName) => {
-    if (!process.env[varName]) {
-        console.warn(`Warning: ${varName} not found in environment variables`);
-    }
-});
-
-// Create a simple standalone JS file for the admin page
-const adminBundle = `
 // Admin credentials
-const ADMIN_USER = "${process.env.REACT_APP_ADMIN_USER || 'admin'}";
-const ADMIN_PASS = "${process.env.REACT_APP_ADMIN_PASS || 'supersecurepassword'}";
+const ADMIN_USER = "admin";
+const ADMIN_PASS = "supersecurepassword";
 
 // Initialize Firebase
 const firebaseConfig = {
-    apiKey: "${process.env.REACT_APP_FIREBASE_API_KEY || ''}",
-    authDomain: "${process.env.REACT_APP_FIREBASE_AUTH_DOMAIN || ''}",
-    projectId: "${process.env.REACT_APP_FIREBASE_PROJECT_ID || ''}",
-    storageBucket: "${process.env.REACT_APP_FIREBASE_STORAGE_BUCKET || ''}",
-    messagingSenderId: "${process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID || ''}",
-    appId: "${process.env.REACT_APP_FIREBASE_APP_ID || ''}",
-    measurementId: "${process.env.REACT_APP_FIREBASE_MEASUREMENT_ID || ''}"
+    apiKey: "AIzaSyB-gJVtiohfMie9fr9NrXoGGSmEfS9sS8s",
+    authDomain: "whiskey-wizardry.firebaseapp.com",
+    projectId: "whiskey-wizardry",
+    storageBucket: "whiskey-wizardry.firebasestorage.app",
+    messagingSenderId: "562241928558",
+    appId: "1:562241928558:web:86c3d967e83e0b01b6d57f",
+    measurementId: "G-0EVD5MWHCG"
 };
 
 // Initialize Firebase
@@ -267,17 +237,3 @@ if (rootElement) {
 } else {
     console.error("Root element not found");
 }
-`;
-
-// Ensure build directory exists
-if (!fs.existsSync(path.join(__dirname, 'build'))) {
-    fs.mkdirSync(path.join(__dirname, 'build'));
-}
-
-// Save the admin bundle
-fs.writeFileSync(path.join(__dirname, 'build', 'admin-bundle.js'), adminBundle);
-
-// Copy admin.html to build
-fs.copyFileSync(path.join(__dirname, 'public', 'admin.html'), path.join(__dirname, 'build', 'admin.html'));
-
-console.log('Admin bundle created successfully!');

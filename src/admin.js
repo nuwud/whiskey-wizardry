@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import AdminPanel from "./AdminPanel.jsx";
+import AdminPanel from "./components/AdminPanel.jsx";
 
 // Ensure root element exists
 const rootElement = document.getElementById("root");
