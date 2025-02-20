@@ -1,0 +1,28 @@
+/* Toggle Quarter CSS */
+.toggle-quarter {
+    background-color: #f8f5f0;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 16px;
+    margin: 0 auto;
+    max-width: 400px;
+    text-align: left;
+}
+
+.toggle-quarter h2 {
+    font-family: 'Georgia', serif;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.toggle-quarter label {
+    display: block;
+    margin-bottom: 8px;
+    font-family: 'Arial', sans-serif;
+    color: #666;
+}
+
+.toggle-quarter input {
+    margin-right: 8px;
+}

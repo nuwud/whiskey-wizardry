@@ -1,0 +1,49 @@
+{
+  "name": "whiskey-wizardry",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "A fun and interactive whiskey tasting game.",
+  "hosting": {
+    "public": "build"
+  },
+  "main": "src/index.js",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "dependencies": {
+    "axios": "^1.7.9",
+    "firebase": "^11.3.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^7.2.0",
+    "react-scripts": "^5.0.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.1",
+    "eslint-config-react-app": "^7.0.1",
+    "eslint-plugin-react": "^7.27.0"
+  },
+  "keywords": [
+    "whiskey",
+    "game",
+    "tasting",
+    "react"
+  ],
+  "author": "Patrick 'Nuwud' Wood <http://nuwudmultimedia.com>",
+  "license": "MIT",
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

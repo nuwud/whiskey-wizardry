@@ -1,0 +1,15 @@
+{
+    "currentQuarter": "1224",
+    "quarters": {
+      "1224": {
+        "name": "December 2024 Release",
+        "samples": [
+          { "id": "A", "name": "Triple-Distilled Single Malt Whiskey", "age": 4, "proof": 100, "mashbill": "Single Malt" },
+          { "id": "B", "name": "Straight Bourbon Whiskey", "age": 7, "proof": 108, "mashbill": "Bourbon" },
+          { "id": "C", "name": "Cask Strength Straight Rye Whiskey", "age": 6, "proof": 115, "mashbill": "Rye" },
+          { "id": "D", "name": "Kentucky Straight Bourbon Single Barrel", "age": 5, "proof": 97, "mashbill": "Bourbon" }
+        ]
+      }
+    }
+  }
+  

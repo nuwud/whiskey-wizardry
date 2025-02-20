@@ -1,0 +1,48 @@
+/* Login Form CSS */
+.login-form {
+    background-color: #f8f5f0;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 16px;
+    margin: 0 auto;
+    max-width: 400px;
+    text-align: left;
+  }
+  
+  .login-form h2 {
+    font-family: 'Georgia', serif;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .login-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-family: 'Arial', sans-serif;
+    color: #666;
+  }
+  
+  .login-form input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 4px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .login-form button {
+    background-color: #a0522d;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 4px;
+    margin-top: 16px;
+  }
+  
+  .login-form .error {
+    color: red;
+    margin-bottom: 10px;
+  }

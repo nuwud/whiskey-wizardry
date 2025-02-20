@@ -1,0 +1,42 @@
+/* Sample Form CSS */
+.sample-form {
+    background-color: #f8f5f0;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 16px;
+    margin-bottom: 16px;
+    text-align: left;
+}
+
+.sample-form h3 {
+    font-family: 'Georgia', serif;
+    color: #333;
+}
+
+.sample-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-family: 'Arial', sans-serif;
+    color: #666;
+}
+
+.sample-form input,
+.sample-form textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 4px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.sample-form button {
+    background-color: #a0522d;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 4px;
+    margin-top: 16px;
+}
