@@ -116,7 +116,8 @@ const ResultsPage = ({ scores, samples, onPlayAgain, activeQuarter }) => {
         <div className="total-score">
           <span className="score-label">Your Total Score:</span>
           <span className="score-value">{totalScore} points</span>
-          <span className="score-percentage">({displayPercentage}%)</span>
+          <span className="score-percentage">({displayPercentage}%)</span><br></br>
+          <span className="max-score">out of {maxPossibleScore} points</span>
         </div>
       </div>
       
@@ -147,37 +148,45 @@ const ResultsPage = ({ scores, samples, onPlayAgain, activeQuarter }) => {
               {isExpanded && (
                 <div className="accordion-content">
                   <div className="sample-details">
-                    <div className="actual-values">
-                      <h5>Actual Values:</h5>
-                      <p>Age: {sample.age} years</p>
-                      <p>Proof: {sample.proof}</p>
-                      <p>Mashbill: {sample.mashbill}</p>
-                    </div>
-                    <div className="score-breakdown">
-                      <h5>Your Score:</h5>
-                      <p>Age: {sampleScore.ageScore}/35 
-                        {sampleScore.ageDifference === 0 ? 
-                          <span className="perfect-match">(Perfect match!)</span> : 
-                          sampleScore.ageDifference === 1 ?
-                          <span className="close-match">(Just 1 year off)</span> :
-                          <span className="score-difference">({sampleScore.ageDifference} years off)</span>
-                        }
-                      </p>
-                      <p>Proof: {sampleScore.proofScore}/35
-                        {sampleScore.proofDifference === 0 ? 
-                          <span className="perfect-match">(Perfect match!)</span> : 
-                          sampleScore.proofDifference === 1 ?
-                          <span className="close-match">(Just 1 point off)</span> :
-                          <span className="score-difference">({sampleScore.proofDifference} points off)</span>
-                        }
-                      </p>
-                      <p>Mashbill: {sampleScore.mashbillScore}/30
-                        {sampleScore.mashbillScore === 30 ? 
-                          <span className="perfect-match">(Correct!)</span> : 
-                          <span className="incorrect-match">(Incorrect)</span>
-                        }
-                      </p>
-                      <p className="sample-total">Sample Total: {sampleScore.total}/100</p>
+                    <div className="values-row">
+                      <div className="actual-values">
+                        <h5>Actual Values:</h5>
+                        <p>Age: {sample.age} years</p>
+                        <p>Proof: {sample.proof}</p>
+                        <p>Mashbill: {sample.mashbill}</p>
+                      </div>
+                      <div className="your-values">
+                        <h5>Your Values:</h5>
+                        <p>Age: {sample.userAge} years</p>
+                        <p>Proof: {sample.userProof}</p>
+                        <p>Mashbill: {sample.userMashbill}</p>
+                      </div>
+                      <div className="score-breakdown">
+                        <h5>Your Score:</h5>
+                        <p>Age: {sampleScore.ageScore}/35 
+                          {sampleScore.ageDifference === 0 ? 
+                            <span className="perfect-match">(Perfect match!)</span> : 
+                            sampleScore.ageDifference === 1 ?
+                            <span className="close-match">(Just 1 year off)</span> :
+                            <span className="score-difference">({sampleScore.ageDifference} years off)</span>
+                          }
+                        </p>
+                        <p>Proof: {sampleScore.proofScore}/35
+                          {sampleScore.proofDifference === 0 ? 
+                            <span className="perfect-match">(Perfect match!)</span> : 
+                            sampleScore.proofDifference === 1 ?
+                            <span className="close-match">(Just 1 point off)</span> :
+                            <span className="score-difference">({sampleScore.proofDifference} points off)</span>
+                          }
+                        </p>
+                        <p>Mashbill: {sampleScore.mashbillScore}/30
+                          {sampleScore.mashbillScore === 30 ? 
+                            <span className="perfect-match">(Correct!)</span> : 
+                            <span className="incorrect-match">(Incorrect)</span>
+                          }
+                        </p>
+                        <p className="sample-total">Sample Total: {sampleScore.total}/100</p>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -197,6 +206,9 @@ const ResultsPage = ({ scores, samples, onPlayAgain, activeQuarter }) => {
           </button>
           {shareTooltip && <div className="share-tooltip">{shareTooltip}</div>}
         </div>
+        <button className="reveal-button" onClick={() => window.location.href = 'https://blindbarrels.com/pages/1224'}>
+          Reveal The Whiskey
+        </button>
       </div>
     </div>
   );
@@ -223,6 +235,9 @@ ResultsPage.propTypes = {
       age: PropTypes.number.isRequired,
       proof: PropTypes.number.isRequired,
       mashbill: PropTypes.string.isRequired,
+      userAge: PropTypes.number,
+      userProof: PropTypes.number,
+      userMashbill: PropTypes.string,
     })
   ).isRequired,
   onPlayAgain: PropTypes.func.isRequired,
